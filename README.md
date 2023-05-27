@@ -8,6 +8,7 @@ This is a python script that can help to organize cluttered files within a folde
   Second one is Where you want the organized files to be.
 
 **Python Installed**
+
 Install python from python.org website
 
 **Run the script Organize.py**
