@@ -36,3 +36,4 @@ folder2 = input("Enter the destination folder path: ")
 
 missing_percentage = calculate_missing_files_percentage(folder1, folder2)
 print(f"Percentage of missing files in {folder2} or its subfolders: {missing_percentage:.2f}%")
+input("Press Enter to close the window")
