@@ -33,19 +33,13 @@ for file_path in file_list:
     file_name = os.path.basename(file_path)
 
     # Handle specific conditions for file names
-    if file_name.startswith("WA") and file_extension != ".jpg":
-        # Rename the file to append ".jpg" extension
-        new_file_name = os.path.splitext(file_name)[0] + ".jpg"
-        new_file_path = os.path.join(destination_path, new_file_name)
-        shutil.copy2(file_path, new_file_path)
+    # Create a separate folder for the file type or place it in the "General" folder
+    if file_extension:
+        type_folder = file_extension[1:].upper()
     else:
-        # Create a separate folder for the file type or place it in the "General" folder
-        if file_extension:
-            type_folder = file_extension[1:].upper()
-        else:
-            type_folder = "General"
-        type_folder_path = os.path.join(destination_path, type_folder)
-        os.makedirs(type_folder_path, exist_ok=True)
-        shutil.copy2(file_path, type_folder_path)
+        type_folder = "General"
+    type_folder_path = os.path.join(destination_path, type_folder)
+    os.makedirs(type_folder_path, exist_ok=True)
+    shutil.copy2(file_path, type_folder_path)
 
 print("File organization completed!")
