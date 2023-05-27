@@ -43,3 +43,4 @@ for file_path in file_list:
     shutil.copy2(file_path, type_folder_path)
 
 print("File organization completed!")
+input("Press Enter to close the window")
