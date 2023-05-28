@@ -20,8 +20,8 @@ for file_path in file_list:
     modified_time = os.path.getmtime(file_path)
     modified_date = datetime.datetime.fromtimestamp(modified_time)
 
-    # Create the destination folder based on the modified date (MM_YYYY format)
-    folder_name = modified_date.strftime("%m_%Y")
+    # Create the destination folder based on the modified date (YYYY_MM format)
+    folder_name = modified_date.strftime("%Y_%m")
     destination_path = os.path.join(destination_folder, folder_name)
 
     # Create the destination folder if it doesn't exist
